@@ -1,8 +1,8 @@
 from openpyxl import load_workbook
 
-file_for_inspection = load_workbook('C:/Users/budim/PycharmProjects/TufelkaSpb/for_indexing/for_url_inspection.xlsx')
-file_all_urls = load_workbook('C:/Users/budim/PycharmProjects/TufelkaSpb/for_indexing/all_urls.xlsx')
-sheet_for_inspection = file_for_inspection ['Sheet1']
+file_for_inspection = load_workbook('for_url_inspection.xlsx')
+file_all_urls = load_workbook('all_urls.xlsx')
+sheet_for_inspection = file_for_inspection['Sheet1']
 sheet_all_urls = file_all_urls['Sheet1']
 
 def send_urls():
@@ -15,8 +15,8 @@ def send_urls():
             # sheet_all_urls.delete_rows(1)
             row += 1
     sheet_all_urls.delete_rows(1, 2000)
-    file_for_inspection.save('C:/Users/budim/PycharmProjects/TufelkaSpb/for_indexing/for_url_inspection.xlsx')
-    file_all_urls.save('C:/Users/budim/PycharmProjects/TufelkaSpb/for_indexing/all_urls.xlsx')
+    file_for_inspection.save('for_url_inspection.xlsx')
+    file_all_urls.save('all_urls.xlsx')
 
 def main():
     send_urls()
